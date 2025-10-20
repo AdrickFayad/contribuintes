@@ -17,9 +17,9 @@ public class Program {
 		int n = sc.nextInt();
 		List<TaxPayer> list = new ArrayList<>();
 		
-		for (int i=0; i<=n; i++) {
+		for (int i=0; i<n; i++) {
 			System.out.println();
-			System.out.println("Digite os dados do "+ (i++) + "o contribuinte:");
+			System.out.println("Digite os dados do "+ (i+1) + "o contribuinte:");
 			System.out.print("Renda anual com salario: ");
 			double salaryIncome = sc.nextDouble();
 			System.out.print("Renda anual com prestação de serviço: ");
@@ -27,11 +27,11 @@ public class Program {
 			System.out.print("Renda anual com ganho de capital: ");
 			double capitalIncome = sc.nextDouble();
 			System.out.print("Gastos médicos: ");
-			double heathSpending = sc.nextDouble();
+			double healthSpending = sc.nextDouble();
 			System.out.print("Gastos educacionais: ");
 			double educationSpending = sc.nextDouble();
 		
-			TaxPayer taxPayer = new TaxPayer(salaryIncome, serviceIncome, capitalIncome, heathSpending, educationSpending);
+			TaxPayer taxPayer = new TaxPayer(salaryIncome, serviceIncome, capitalIncome, healthSpending, educationSpending);
 			list.add(taxPayer);
 		
 		}
@@ -40,7 +40,7 @@ public class Program {
 			TaxPayer listTP = list.get(i);
 			System.out.println("\nResumo do " +(i+1)+ "o contribuinte: ");
 			System.out.printf("Imposto bruto total: %.2f%n", listTP.grossTax());
-			System.out.printf("Abatimento: %.2f%n", listTP.grossTax()) ;
+			System.out.printf("Abatimento: %.2f%n", listTP.taxRebate()) ;
 			System.out.printf("Imposto devido: %.2f%n", listTP.netTax());
 			
 		}
