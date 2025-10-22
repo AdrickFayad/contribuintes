@@ -30,7 +30,7 @@ public class Program {
 			double healthSpending = sc.nextDouble();
 			System.out.print("Gastos educacionais: ");
 			double educationSpending = sc.nextDouble();
-		
+			
 			TaxPayer taxPayer = new TaxPayer(salaryIncome, serviceIncome, capitalIncome, healthSpending, educationSpending);
 			list.add(taxPayer);
 		
@@ -40,7 +40,7 @@ public class Program {
 			TaxPayer listTP = list.get(i);
 			System.out.println("\nResumo do " +(i+1)+ "o contribuinte: ");
 			System.out.printf("Imposto bruto total: %.2f%n", listTP.grossTax());
-			System.out.printf("Abatimento: %.2f%n", listTP.taxRebate()) ;
+			System.out.printf("Abatimento: %.2f%n", listTP.taxRebate());
 			System.out.printf("Imposto devido: %.2f%n", listTP.netTax());
 			
 		}
@@ -51,3 +51,4 @@ public class Program {
 	}
 
 }
+
